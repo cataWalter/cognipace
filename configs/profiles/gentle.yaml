@@ -1,0 +1,39 @@
+# Gentle Profile - Minimal intervention
+
+sensors:
+  eye_tracking:
+    enabled: true
+    sample_rate: 15  # Lower sample rate
+  keystroke:
+    enabled: true
+  app_usage:
+    enabled: true
+  calendar:
+    enabled: false
+  wearables:
+    enabled: false
+  voice:
+    enabled: false
+
+adaptations:
+  notifications:
+    enabled: true
+    mode: "gentle"  # Only batch, never block
+  ui_density:
+    enabled: false  # Don't change UI
+  app_blocking:
+    enabled: false
+  breaks:
+    enabled: true
+    interval_minutes: 90
+    duration_minutes: 5
+
+privacy:
+  data_retention_days: 14
+  telemetry: false
+  raw_data_storage: false
+
+model:
+  model_path: null
+  window_size_seconds: 300
+  prediction_horizon_seconds: 900

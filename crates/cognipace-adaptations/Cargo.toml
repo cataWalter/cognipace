@@ -1,0 +1,21 @@
+[package]
+name = "cognipace-adaptations"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Adaptation mechanisms for CogniPace"
+
+[dependencies]
+cognipace-core = { path = "../cognipace-core" }
+cognipace-sensors = { path = "../cognipace-sensors" }
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+
+[target.'cfg(target_os = "linux")'.dependencies]
+zbus = "3"

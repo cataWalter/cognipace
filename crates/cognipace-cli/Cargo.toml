@@ -1,0 +1,31 @@
+[package]
+name = "cognipace-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Command-line interface for CogniPace"
+
+[[bin]]
+name = "cognipace-cli"
+path = "src/main.rs"
+
+[dependencies]
+cognipace-core = { path = "../cognipace-core" }
+cognipace-sensors = { path = "../cognipace-sensors" }
+cognipace-adaptations = { path = "../cognipace-adaptations" }
+serde.workspace = true
+serde_json.workspace = true
+serde_yaml.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+thiserror.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+clap.workspace = true
+crossterm.workspace = true
+ratatui.workspace = true
+config.workspace = true
+ctrlc = { version = "3.4", features = ["termination"] }
+dirs = "5.0"

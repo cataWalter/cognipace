@@ -1,0 +1,41 @@
+# CogniPace Default Configuration
+
+sensors:
+  eye_tracking:
+    enabled: true
+    sample_rate: 30  # Hz
+  keystroke:
+    enabled: true
+  app_usage:
+    enabled: true
+  calendar:
+    enabled: false
+    source: "local"  # google, local, outlook
+  wearables:
+    enabled: false
+  voice:
+    enabled: false
+
+adaptations:
+  notifications:
+    enabled: true
+    mode: "adaptive"  # adaptive, aggressive, gentle
+  ui_density:
+    enabled: true
+  app_blocking:
+    enabled: false  # opt-in for safety
+    blocked_apps: []
+  breaks:
+    enabled: true
+    interval_minutes: 90
+    duration_minutes: 5
+
+privacy:
+  data_retention_days: 7
+  telemetry: false
+  raw_data_storage: false
+
+model:
+  model_path: null  # Path to ONNX model file
+  window_size_seconds: 300  # 5 minutes
+  prediction_horizon_seconds: 900  # 15 minutes

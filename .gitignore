@@ -1,0 +1,47 @@
+# CogniPace - Cognitive Load & Attention Operating System
+
+## Build & Development
+
+### Rust Artifacts
+/target/
+**/*.rs.bk
+*.pdb
+
+### Python Artifacts
+python/__pycache__/
+python/**/*.pyc
+python/.pytest_cache/
+python/.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+### Node.js Artifacts (for dashboard UI)
+**/node_modules/
+**/dist/
+**/.svelte-kit/
+
+### IDE & Editor Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+### OS Files
+.DS_Store
+Thumbs.db
+
+### Data & Logs (generated at runtime)
+data/
+logs/
+*.log
+*.sqlite
+*.sqlite3
+
+### Environment Files
+.env
+.env.local
+
+### Docker
+docker-compose.override.yml

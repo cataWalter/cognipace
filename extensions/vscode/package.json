@@ -1,0 +1,71 @@
+{
+  "name": "cognipace-vscode",
+  "displayName": "CogniPace - Cognitive Load Monitor",
+  "description": "Monitor your cognitive load while coding and adapt your environment for better focus",
+  "version": "0.1.0",
+  "publisher": "cognipace",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cognipace.showStatus",
+        "title": "CogniPace: Show Current Cognitive Status"
+      },
+      {
+        "command": "cognipace.toggleFocusMode",
+        "title": "CogniPace: Toggle Focus Mode"
+      },
+      {
+        "command": "cognipace.takeBreak",
+        "title": "CogniPace: Take a Break"
+      }
+    ],
+    "configuration": {
+      "title": "CogniPace",
+      "properties": {
+        "cognipace.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CogniPace integration"
+        },
+        "cognipace.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8080",
+          "description": "CogniPace API URL"
+        },
+        "cognipace.focusMode.blockDistractions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Block distracting notifications in focus mode"
+        },
+        "cognipace.breakReminder.intervalMinutes": {
+          "type": "number",
+          "default": 90,
+          "description": "Break reminder interval in minutes"
+        }
+      }
+    },
+    "statusBarItems": [
+      {
+        "id": "cognipace.status",
+        "alignment": "right",
+        "priority": 100
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

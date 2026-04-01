@@ -1,0 +1,20 @@
+[package]
+name = "cognipace-dashboard"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Tauri-based dashboard for CogniPace"
+
+[dependencies]
+cognipace-core = { path = "../cognipace-core" }
+cognipace-sensors = { path = "../cognipace-sensors" }
+cognipace-adaptations = { path = "../cognipace-adaptations" }
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tauri.workspace = true
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }

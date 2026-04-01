@@ -1,0 +1,52 @@
+# CogniPace - Workspace Configuration
+
+[workspace]
+members = [
+    "crates/cognipace-core",
+    "crates/cognipace-sensors",
+    "crates/cognipace-adaptations",
+    "crates/cognipace-dashboard",
+    "crates/cognipace-cli",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["CogniPace Contributors"]
+license = "MIT"
+repository = "https://github.com/cognipace/cognipace"
+readme = "README.md"
+
+[workspace.dependencies]
+# Common dependencies
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+thiserror = "1.0"
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+config = "0.13"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+async-trait = "0.1"
+
+# ML & Data
+ort = { version = "1.16", features = ["download-binaries"] }
+ndarray = "0.15"
+rusqlite = { version = "0.30", features = ["bundled"] }
+
+# CLI
+clap = { version = "4.0", features = ["derive"] }
+crossterm = "0.27"
+ratatui = "0.24"
+
+# Tauri
+tauri = { version = "1.5", features = ["shell-open"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
